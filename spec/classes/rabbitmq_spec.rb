@@ -1075,8 +1075,9 @@ rabbitmq hard nofile 1234
         ) }
 
         it { should contain_apt__pin('rabbitmq').with(
-          'packages' => 'rabbitmq-server',
-          'priority' => '700'
+          'packages' => '*',
+          'priority' => '700',
+          'origin'   => 'www.rabbitmq.com'
         ) }
 
       end
